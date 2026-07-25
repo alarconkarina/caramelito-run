@@ -10,15 +10,15 @@
   - Verificar que el canvas aparece en el navegador sin errores de consola.
   - _Requirement: REQ-07, REQ-10_
 
-- [ ] 2. BootScene — precarga de assets
+- [x] 2. BootScene — precarga de assets
   - Crear `src/scenes/BootScene.js`.
   - Cargar todos los assets de sprites y sonidos en esta escena; no cargar recursos adicionales durante la ejecución.
   - Mostrar texto "Loading..." durante la carga.
   - Transicionar a `GameScene` al completar.
   - _Requirement: REQ-01, REQ-07, REQ-09_
 
-- [ ] 3. Assets gráficos
-  - Colocar en `/assets/sprites` los PNG con fondo transparente para: `caramelito.png` (spritesheet de carrera y salto), `obstacle_cat.png`, `obstacle_pot.png`, `obstacle_trash.png` y `bg_residential.png` (imagen tileable para el fondo).
+- [x] 3. Assets gráficos
+  - Colocar en `/assets/sprites` los PNG con fondo transparente para: `caramelito_run.png` (spritesheet de carrera y salto), `obstacle_cat.png`, `obstacle_pot.png`, `obstacle_trash.png` y `bg_residential.png` (imagen tileable para el fondo).
   - Los tamaños de los sprites son: Caramelito: 64×64, Cat: 64×64, Trash: 64×64, Pot: 48×48
   - _Requirement: REQ-04, REQ-09_
 

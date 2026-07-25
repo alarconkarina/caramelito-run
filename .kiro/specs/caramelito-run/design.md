@@ -92,10 +92,10 @@ Todos los sprites se recogen de la carpeta assets/sprites
 | Asset | Tamaño frame | Frames |
 |-------|-------------|--------|
 | `caramelito_run.png` | 64×64 | 4 run + 1 jump|
-| `cat.png` | 64×64 | 1 |
-| `pot.png` | 48×48 | 1 |
-| `trash.png` | 64×64 | 1 |
-| `bg_ground.png` | 1024×720 | tile |
+| `obstacle_cat.png` | 64×64 | 1 |
+| `obstacle_pot.png` | 48×48 | 1 |
+| `obstacle_trash.png` | 64×64 | 1 |
+| `bg_residential.png` | 1774×887 | tile |
 
 ## Phaser Config
 

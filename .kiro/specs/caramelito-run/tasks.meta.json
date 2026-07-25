@@ -12,6 +12,45 @@
         "chatSessionId": "sess_9c295d66-5f3a-4ead-b420-d46ad1ff5000",
         "timestamp": 1784952919434
       }
+    ],
+    "2. BootScene — precarga de assets": [
+      {
+        "executionId": "7b3814ff-9df9-4bd0-8543-024b60b2e9c4",
+        "chatSessionId": "sess_b33c126a-738e-4d53-ba21-0a242c82d341",
+        "timestamp": 1784953223238
+      },
+      {
+        "executionId": "7b3814ff-9df9-4bd0-8543-024b60b2e9c4",
+        "chatSessionId": "sess_b33c126a-738e-4d53-ba21-0a242c82d341",
+        "timestamp": 1784953270942
+      }
+    ],
+    "3. Assets gráficos": [
+      {
+        "executionId": "af3ded01-225b-464f-ac1f-988b5eb5cae9",
+        "chatSessionId": "sess_b1a35466-95cd-4794-aadf-6ccf0f952d59",
+        "timestamp": 1784953479175
+      },
+      {
+        "executionId": "85921adf-8913-425a-84fb-dcc2fa70abde",
+        "chatSessionId": "sess_4710f9f5-5715-4e72-b5ef-29ad1a5af11d",
+        "timestamp": 1784953900762
+      },
+      {
+        "executionId": "8d6c18f1-388c-4851-8c8a-2f7550af90c8",
+        "chatSessionId": "sess_49023b15-6a63-48d4-9d6a-ef583e38c378",
+        "timestamp": 1784953935417
+      },
+      {
+        "executionId": "c9cfcb48-25fa-407b-840a-0d466f1f6a05",
+        "chatSessionId": "sess_7c409259-625d-41d2-87c3-4918585814c3",
+        "timestamp": 1784954166084
+      },
+      {
+        "executionId": "c9cfcb48-25fa-407b-840a-0d466f1f6a05",
+        "chatSessionId": "sess_7c409259-625d-41d2-87c3-4918585814c3",
+        "timestamp": 1784954203345
+      }
     ]
   }
 }
