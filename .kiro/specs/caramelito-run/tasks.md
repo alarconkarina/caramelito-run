@@ -2,7 +2,7 @@
 
 ## Task List
 
-- [ ] 1. Scaffold del proyecto y configuración base
+- [x] 1. Scaffold del proyecto y configuración base
   - Crear `index.html` con carga de Phaser 3 desde CDN.
   - Crear `src/main.js` con la config de Phaser y registro de las tres escenas.
   - Crear la estructura de carpetas `/assets/sprites`, `/assets/sounds`, `/src/scenes`, `/src/objects`.
