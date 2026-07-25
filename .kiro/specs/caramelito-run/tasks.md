@@ -22,20 +22,20 @@
   - Los tamaños de los sprites son: Caramelito: 64×64, Cat: 64×64, Trash: 64×64, Pot: 48×48
   - _Requirement: REQ-04, REQ-09_
 
-- [ ] 4. Background residencial con scroll infinito (Background.js)
+- [x] 4. Background residencial con scroll infinito (Background.js)
   - Crear `src/objects/Background.js` usando un único `TileSprite` con `bg_residential.png`.
   - Implementar método `update(speed)` que desplaza el tile horizontalmente de forma continua.
   - Instanciar y actualizar desde `GameScene`.
   - _Requirement: REQ-04, REQ-09_
 
-- [ ] 5. Jugador Caramelito (Player.js)
+- [x] 5. Jugador Caramelito (Player.js)
   - Crear `src/objects/Player.js` extendiendo `Phaser.Physics.Arcade.Sprite`.
   - Registrar animaciones `run` (loop) y `jump` (one-shot).
   - Implementar método `jump()` con validación de `body.blocked.down` para evitar doble salto.
   - Posicionar en X fija, sobre el suelo.
   - _Requirement: REQ-02, REQ-10_
 
-- [ ] 6. Input de salto — solo teclado
+- [x] 6. Input de salto — solo teclado
   - En `GameScene`, escuchar únicamente `Space` via `Phaser.Input.Keyboard`.
   - Llamar a `player.jump()` en cada evento.
   - _Requirement: REQ-02_

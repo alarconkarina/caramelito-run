@@ -1,12 +1,14 @@
-// Background.js — Fondo con paralaje (scroll infinito)
-// Implementación completa en la tarea 4
+// Background.js — Fondo residencial con scroll infinito
 
-class Background {
+class Background extends Phaser.GameObjects.TileSprite {
   constructor(scene) {
-    this.scene = scene;
+    super(scene, 0, 0, scene.scale.width, scene.scale.height, 'bg_residential');
+    
+    this.scene.add.existing(this);
+    this.setOrigin(0, 0);
   }
 
-  update(speed) {
-    // Desplazamiento del tile implementado en tarea 4
-  }
+  update(speed, delta) {
+  this.tilePositionX -= speed * (delta / 1000);
+}
 }

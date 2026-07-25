@@ -95,7 +95,7 @@ Todos los sprites se recogen de la carpeta assets/sprites
 | `obstacle_cat.png` | 64×64 | 1 |
 | `obstacle_pot.png` | 48×48 | 1 |
 | `obstacle_trash.png` | 64×64 | 1 |
-| `bg_residential.png` | 1774×887 | tile |
+| `bg_residential.png` | 1280×720 | tile |
 
 ## Phaser Config
 

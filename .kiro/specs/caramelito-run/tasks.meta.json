@@ -51,6 +51,42 @@
         "chatSessionId": "sess_7c409259-625d-41d2-87c3-4918585814c3",
         "timestamp": 1784954203345
       }
+    ],
+    "4. Background residencial con scroll infinito (Background.js)": [
+      {
+        "executionId": "14db7ef6-9d30-469c-bf8c-3d32242dd165",
+        "chatSessionId": "sess_7a0f24de-791e-40a7-bcda-d61216d4f187",
+        "timestamp": 1784954543480
+      },
+      {
+        "executionId": "dab158cf-747c-4bfe-b89d-264725eec18a",
+        "chatSessionId": "sess_7a0f24de-791e-40a7-bcda-d61216d4f187",
+        "timestamp": 1784955234006
+      }
+    ],
+    "5. Jugador Caramelito (Player.js)": [
+      {
+        "executionId": "5f8b4785-011e-456a-93c2-1ac85fe8875a",
+        "chatSessionId": "sess_84cc6126-cffd-4f52-b577-cb5a25c88870",
+        "timestamp": 1784957817642
+      },
+      {
+        "executionId": "5f8b4785-011e-456a-93c2-1ac85fe8875a",
+        "chatSessionId": "sess_84cc6126-cffd-4f52-b577-cb5a25c88870",
+        "timestamp": 1784957870211
+      }
+    ],
+    "6. Input de salto — solo teclado": [
+      {
+        "executionId": "612f1803-7e15-4610-86e3-dfcb2b0a9f95",
+        "chatSessionId": "sess_59ed2652-c816-4c72-8284-9ede5ac10e61",
+        "timestamp": 1784958017326
+      },
+      {
+        "executionId": "612f1803-7e15-4610-86e3-dfcb2b0a9f95",
+        "chatSessionId": "sess_59ed2652-c816-4c72-8284-9ede5ac10e61",
+        "timestamp": 1784958082344
+      }
     ]
   }
 }
