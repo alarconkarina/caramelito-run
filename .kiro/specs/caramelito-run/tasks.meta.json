@@ -99,6 +99,30 @@
         "chatSessionId": "sess_a8856960-e601-4edc-a169-b36c339fbad3",
         "timestamp": 1784958272676
       }
+    ],
+    "8. Dificultad progresiva por distancia": [
+      {
+        "executionId": "83ad6ef6-7252-4bce-806d-1bad6bdc63fc",
+        "chatSessionId": "sess_6dfe9965-1d6e-4eb3-b950-cf4f284c659d",
+        "timestamp": 1784962620271
+      },
+      {
+        "executionId": "83ad6ef6-7252-4bce-806d-1bad6bdc63fc",
+        "chatSessionId": "sess_6dfe9965-1d6e-4eb3-b950-cf4f284c659d",
+        "timestamp": 1784962720268
+      }
+    ],
+    "9. Pantalla de inicio": [
+      {
+        "executionId": "d2f57cd7-ca6b-4073-964f-f399eb02875b",
+        "chatSessionId": "sess_685397ba-3b63-46bf-ab1d-8bd7bc50ab9b",
+        "timestamp": 1784962867087
+      },
+      {
+        "executionId": "d2f57cd7-ca6b-4073-964f-f399eb02875b",
+        "chatSessionId": "sess_685397ba-3b63-46bf-ab1d-8bd7bc50ab9b",
+        "timestamp": 1784962930727
+      }
     ]
   }
 }

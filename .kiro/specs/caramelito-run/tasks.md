@@ -48,13 +48,13 @@
   - En `GameScene`, crear un grupo de obstáculos y un `TimerEvent` para generar obstáculos de forma periódica con selección aleatoria de tipo.
   - _Requirement: REQ-03, REQ-08, REQ-10_
 
-- [ ] 8. Dificultad progresiva por distancia
+- [x] 8. Dificultad progresiva por distancia
   - Implementar lógica en `GameScene` que reduzca gradualmente el intervalo entre spawns de obstáculos a medida que avanza el tiempo.
   - Garantizar un intervalo mínimo que evite situaciones imposibles (gap jugable siempre presente).
   - _Requirement: REQ-03_
 
-  - [ ] 9. Pantalla de inicio
-  - Mostrar un texto "Presiona SPACE para empezar" en `GameScene` antes de que el juego arranque.
+  - [x] 9. Pantalla de inicio
+  - Mostrar un texto "Presiona SPACE para empezar" en `GameScene` antes de que el juego arranque y al presionarlo el texto desaparece.
   - El juego no inicia hasta que el jugador pulsa `Space`.
   - _Requirement: REQ-01_
 
