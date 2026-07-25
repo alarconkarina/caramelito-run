@@ -5,6 +5,7 @@ class GameScene extends Phaser.Scene {
     super({ key: 'GameScene' });
     this.background = null;
     this.player = null;
+    this.ground = null;
     this.obstacles = null;
     this.spawnEvent = null;
     this.speed = 100;
@@ -13,14 +14,39 @@ class GameScene extends Phaser.Scene {
   create() {
     const { width, height } = this.scale;
 
-    // Fondo con scroll infinito
-    this.background = new Background(this);
+   
 
     // Grupo de obstáculos con física
     this.obstacles = this.physics.add.group();
 
-    // Jugador en el suelo
-    this.player = new Player(this, 100, height - 50);
+      
+
+    // Crear suelo invisible con física
+    this.ground = this.physics.add.staticGroup();
+
+
+  const ground = this.add.rectangle(
+    width / 2,
+    height - 145,
+    width,
+    40,
+    0xffffff
+  );
+
+  this.physics.add.existing(ground, true);
+
+  this.ground.add(ground);
+
+   // Fondo con scroll infinito
+    this.background = new Background(this);
+     
+    // Jugador apoyado sobre el suelo
+  this.player = new Player(this, 150, height - 165);
+
+  
+
+  // Colisión jugador - suelo
+  this.physics.add.collider(this.player, this.ground);
 
     // Spawner de obstáculos — cada 1.5 segundos
     this.spawnEvent = this.time.addEvent({
