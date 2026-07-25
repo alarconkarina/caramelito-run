@@ -87,6 +87,18 @@
         "chatSessionId": "sess_59ed2652-c816-4c72-8284-9ede5ac10e61",
         "timestamp": 1784958082344
       }
+    ],
+    "7. Obstáculos (Obstacle.js y spawn)": [
+      {
+        "executionId": "e91ece10-88b3-45b9-8060-e0ceedd35905",
+        "chatSessionId": "sess_a8856960-e601-4edc-a169-b36c339fbad3",
+        "timestamp": 1784958193690
+      },
+      {
+        "executionId": "e91ece10-88b3-45b9-8060-e0ceedd35905",
+        "chatSessionId": "sess_a8856960-e601-4edc-a169-b36c339fbad3",
+        "timestamp": 1784958272676
+      }
     ]
   }
 }

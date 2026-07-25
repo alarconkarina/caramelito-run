@@ -40,7 +40,7 @@
   - Llamar a `player.jump()` en cada evento.
   - _Requirement: REQ-02_
 
-- [ ] 7. Obstáculos (Obstacle.js y spawn)
+- [x] 7. Obstáculos (Obstacle.js y spawn)
   - Crear `src/objects/Obstacle.js` extendiendo `Phaser.Physics.Arcade.Sprite`.
   - Soportar tres tipos: gato (`obstacle_cat`), maceta (`obstacle_pot`) y tacho de basura (`obstacle_trash`).
   - Los obstáculos deberán pertenecer a un grupo de física dinámico (`Physics Group`).
