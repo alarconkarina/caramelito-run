@@ -9,6 +9,6 @@ class Background extends Phaser.GameObjects.TileSprite {
   }
 
   update(speed, delta) {
-  this.tilePositionX -= speed * (delta / 1000);
+  this.tilePositionX += speed * (delta / 1000);
 }
 }
