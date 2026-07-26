@@ -6,11 +6,12 @@ class Player extends Phaser.Physics.Arcade.Sprite {
     scene.add.existing(this);
     scene.physics.add.existing(this);
 
+    // Origin centrado horizontal, abajo para mejor alineación con el suelo
+    this.setOrigin(0.5, 1);
 
-  this.setOrigin(0.5, 1);
-
-  this.body.setSize(this.width, this.height);
-  this.body.setOffset(0, 0);
+    // Hitbox ajustada para pixel art (cuerpo del personaje, no整个帧)
+    this.body.setSize(40, 56);
+    this.body.setOffset(12, 8);
 
     // Configuración física
     this.setCollideWorldBounds(true);
@@ -20,7 +21,7 @@ class Player extends Phaser.Physics.Arcade.Sprite {
   }
 
   createAnimations(scene) {
-    // Animación "run" — 4 frames en loop
+    // Animación "run" — 4 frames en loop (spritesheet tiene 4 frames de carrera)
     scene.anims.create({
       key: 'run',
       frames: scene.anims.generateFrameNumbers('caramelito', { start: 0, end: 3 }),
@@ -28,7 +29,7 @@ class Player extends Phaser.Physics.Arcade.Sprite {
       repeat: -1
     });
 
-    // Animación "jump" — 1 frame (one-shot, no loop)
+    // Animación "jump" — frame 4 (uno-shot)
     scene.anims.create({
       key: 'jump',
       frames: [{ key: 'caramelito', frame: 4 }],
@@ -42,15 +43,21 @@ class Player extends Phaser.Physics.Arcade.Sprite {
     if (this.body.blocked.down) {
       this.setVelocityY(-500);
       this.play('jump');
+      
+      // Reproducir sonido de salto
+      if (this.scene.sound.get('jump')) {
+        this.scene.sound.play('jump');
+      }
     }
   }
 
   update() {
-    // Reproducir animación "run" si está en el suelo
+    // Reproducir animación según estado
     if (this.body.blocked.down) {
-      if (this.anims.currentAnim?.key !== 'run') {
+      if (!this.anims.isPlaying || this.anims.currentAnim?.key !== 'run') {
         this.play('run', true);
       }
     }
+    // Cuando está en el aire, mantener animación de salto
   }
 }

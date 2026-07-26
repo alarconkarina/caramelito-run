@@ -27,27 +27,46 @@ class GameScene extends Phaser.Scene {
   create() {
     const { width, height } = this.scale;
 
-    // Suelo (visible para depuración)
+    // Reiniciar estado de la partida
+this.gameStarted = false;
+this.gameOver = false;
+
+this.score = 0;
+this.startTime = 0;
+this.gameDuration = 0;
+
+this.speed = 100;
+
+this.spawnDelay = 2000;
+this.spawnEvent = null;
+
+    // Suelo - estilo pixel art GBA (verde pasto con borde superior)
+    // Superficie en Y = height - 145 (145px desde el fondo)
+    const groundY = height - 155;
+
+    //Suelo invisible
 this.ground = this.add.rectangle(
   width / 2,
-  height - 145,
+  groundY + 20,
   width,
   40,
   0xffffff
-);
+).setVisible(false);
+
 
 // Agregar física estática
 this.physics.add.existing(this.ground, true);
 
-
    // Fondo con scroll infinito
     this.background = new Background(this);
      
-    // Jugador apoyado sobre el suelo
-  this.player = new Player(this, 150, height - 165);
+    // Jugador posicionado sobre el suelo
+    this.player = new Player(this, 150, groundY);
+    this.player.setDepth(10);
 
-   // Grupo de obstáculos con física
+    // Grupo de obstáculos con física
     this.obstacles = this.physics.add.group();
+    this.obstacles.setDepth(10);
 
       
 
@@ -55,13 +74,26 @@ this.physics.add.existing(this.ground, true);
   this.physics.add.collider(this.player, this.ground);
   this.physics.add.collider(this.obstacles, this.ground);
 
-    // Texto de inicio - mostrar antes de que arranque el juego
+    // Texto de inicio - estilo pixel art arcade
     this.startText = this.add
       .text(width / 2, height / 2, 'Presiona SPACE para empezar', {
-        fontSize: '32px',
-        fill: '#ffffff'
+        fontSize: '28px',
+        fill: '#ffffff',
+        fontFamily: '"Courier New", Courier, monospace',
+        stroke: '#000000',
+        strokeThickness: 6
       })
-      .setOrigin(0.5);
+      .setOrigin(0.5)
+      .setDepth(100);
+
+    // Efecto de parpadeo en texto de inicio
+    this.tweens.add({
+      targets: this.startText,
+      alpha: 0.3,
+      duration: 600,
+      yoyo: true,
+      repeat: -1
+    });
 
     // Escuchar Space para iniciar el juego
     this.input.keyboard.on('keydown-SPACE', () => {
@@ -87,9 +119,11 @@ this.physics.add.existing(this.ground, true);
   createScoreText() {
     const { width } = this.scale;
     this.scoreText = this.add.text(width - 20, 20, `Score: ${this.score}`, {
-      fontSize: '24px',
+      fontSize: '20px',
       fill: '#ffffff',
-      fontFamily: 'Courier'
+      fontFamily: '"Courier New", Courier, monospace',
+      stroke: '#000000',
+      strokeThickness: 3
     })
     .setOrigin(1, 0)
     .setDepth(100);
@@ -129,9 +163,11 @@ this.physics.add.existing(this.ground, true);
     // Mostrar mensaje de game over
     const { width, height } = this.scale;
     this.add.text(width / 2, height / 2, 'GAME OVER', {
-      fontSize: '48px',
-      fill: '#ff0000',
-      fontFamily: 'Courier'
+      fontSize: '40px',
+      fill: '#ff3333',
+      fontFamily: '"Courier New", Courier, monospace',
+      stroke: '#000000',
+      strokeThickness: 4
     })
     .setOrigin(0.5)
     .setDepth(100);
@@ -153,21 +189,32 @@ this.physics.add.existing(this.ground, true);
     const types = ['obstacle_cat', 'obstacle_pot', 'obstacle_trash'];
     const type = Phaser.Math.RND.pick(types);
 
-    console.log("Spawn obstáculo:", type);
+    // Posición Y alineada con el suelo (altura del suelo desde arriba = 145)
+    // Ajustamos según el tipo de obstáculo para que todos descansen sobre el suelo
+    const groundY = height - 155;
+    
+    // Diferentes alturas según el tipo de obstáculo
+    let spawnY;
+    switch (type) {
+      case 'obstacle_pot':
+        // Maceta más pequeña (48x48)
+        spawnY = groundY - 24;
+        break;
+      case 'obstacle_cat':
+      case 'obstacle_trash':
+      default:
+        // Gato y tacho (64x64)
+        spawnY = groundY - 32;
+        break;
+    }
 
-    const obstacle = new Obstacle (this, width - 150, height -190, type);
-    console.log("Después del constructor:", obstacle.body.velocity.x);
+    const obstacle = new Obstacle(this, width - 50, spawnY, type);
 
     this.obstacles.add(obstacle);
 
-// El grupo resetea el body, así que restauramos la configuración
+    // El grupo resetea el body, así que restauramos la configuración
 obstacle.body.setAllowGravity(false);
 obstacle.setVelocityX(-300);
-
-console.log("Después de agregar al grupo:", obstacle.body.velocity.x);
-
-
-    console.log(this.obstacles);
 
     // Reducir delay para el próximo spawn (dificultad progresiva)
     this.spawnDelay = Math.max(
@@ -177,6 +224,7 @@ console.log("Después de agregar al grupo:", obstacle.body.velocity.x);
   }
 
   startSpawner(delay) {
+    console.log("Creando Timer");
     // Crear un timer que se ejecuta una vez y se recrea con nuevo delay
     this.spawnEvent = this.time.addEvent({
       delay: delay,
@@ -187,6 +235,7 @@ console.log("Después de agregar al grupo:", obstacle.body.velocity.x);
   }
 
   onSpawnComplete() {
+    console.log("Timer ejecutado");
     // Ejecutar spawn
     this.spawnObstacle();
     // Programar siguiente spawn con delay reducido
@@ -219,6 +268,58 @@ console.log("Después de agregar al grupo:", obstacle.body.velocity.x);
         this.score = newScore;
         this.scoreText.setText(`Score: ${this.score}`);
       }
+    }
+  }
+
+  shutdown() {
+    // Limpiar listener de teclado para evitar duplicados
+    this.input.keyboard.off('keydown-SPACE');
+
+    // Limpiar timer de spawn si existe
+    if (this.spawnEvent) {
+      this.spawnEvent.remove();
+      this.spawnEvent = null;
+    }
+
+    // Limpiar grupo de obstáculos
+    if (this.obstacles) {
+      this.obstacles.clear(true);
+    }
+
+    // Destruir background
+    if (this.background) {
+      this.background.destroy();
+      this.background = null;
+    }
+
+    // Destruir jugador
+    if (this.player) {
+      this.player.destroy();
+      this.player = null;
+    }
+
+    // Destruir texto de score
+    if (this.scoreText) {
+      this.scoreText.destroy();
+      this.scoreText = null;
+    }
+
+    // Destruir texto de inicio
+    if (this.startText) {
+      this.startText.destroy();
+      this.startText = null;
+    }
+
+    // Destruir suelo
+    if (this.ground) {
+      this.ground.destroy();
+      this.ground = null;
+    }
+
+    // Destruir borde del suelo
+    if (this.groundTop) {
+      this.groundTop.destroy();
+      this.groundTop = null;
     }
   }
 }
