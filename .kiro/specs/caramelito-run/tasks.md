@@ -58,14 +58,14 @@
   - El juego no inicia hasta que el jugador pulsa `Space`.
   - _Requirement: REQ-01_
 
-- [ ] 10. Colisiones y Game Over
+- [x] 10. Colisiones y Game Over
   - Registrar `physics.add.overlap(player, obstaclesGroup, onHit)`.
   - En `onHit`: reproducir sonido de game over, detener el juego y lanzar `GameOverScene` pasando la puntuación final.
   - _Requirement: REQ-01, REQ-03_
 
-- [ ] 11. Sistema de puntuación
+- [x] 11. Sistema de puntuación
   - Inicializar el high score en 0 si no existe entrada en `localStorage`.
-  - Mostrar score en tiempo real con un `Text` de Phaser durante la partida.
+  - Mostrar score en tiempo real con un `Text` de Phaser durante la partida, que se muestre en la parte superior de la pantalla.
   - Calcular score = segundos de supervivencia × 10.
   - Leer y guardar high score en `localStorage` con la clave `caramelito_highscore`.
   - _Requirement: REQ-05_
