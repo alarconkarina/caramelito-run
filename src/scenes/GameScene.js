@@ -9,10 +9,15 @@ class GameScene extends Phaser.Scene {
     this.obstacles = null;
     this.spawnEvent = null;
     this.speed = 100;
+    // Difficulty of obstacles
+    this.obstacleSpeed = 300;
+    this.maxObstacleSpeed = 700;
+    this.speedIncrease = 10;  
     // Progressive difficulty
-    this.spawnDelay = 2000;      // Initial delay in ms
-    this.minSpawnDelay = 700;    // Minimum delay to keep game playable
-    this.delayReduction = 100;   // How much to reduce per spawn
+    this.initialSpawnDelay = 2000
+     this.speedIncreaseRate = 5;
+    this.spawnDelay = this.initialSpawnDelay;      // Initial delay in ms
+    this.minSpawnDelay = 800;    // Minimum delay to keep game playable
     // Start screen state
     this.gameStarted = false;
     this.startText = null;
@@ -37,8 +42,9 @@ this.gameDuration = 0;
 
 this.speed = 100;
 
-this.spawnDelay = 2000;
 this.spawnEvent = null;
+this.obstacleSpeed = 300;
+this.spawnDelay = this.initialSpawnDelay;
 
     // Suelo - estilo pixel art GBA (verde pasto con borde superior)
     // Superficie en Y = height - 145 (145px desde el fondo)
@@ -213,14 +219,16 @@ this.physics.add.existing(this.ground, true);
     this.obstacles.add(obstacle);
 
     // El grupo resetea el body, así que restauramos la configuración
-obstacle.body.setAllowGravity(false);
-obstacle.setVelocityX(-300);
+    obstacle.body.setAllowGravity(false);
+    obstacle.setVelocityX(-this.obstacleSpeed);
 
-    // Reducir delay para el próximo spawn (dificultad progresiva)
-    this.spawnDelay = Math.max(
-      this.minSpawnDelay,
-      this.spawnDelay - this.delayReduction
-    );
+    
+    // Calculo automatico del nuevo delay
+   // const progress =
+    //(this.obstacleSpeed - 300) /
+    //(this.maxObstacleSpeed - 300);
+
+   
   }
 
   startSpawner(delay) {
@@ -242,7 +250,38 @@ obstacle.setVelocityX(-300);
     this.startSpawner(this.spawnDelay);
   }
 
+
+  updateDifficulty() {
+    const survivalTime = (this.time.now - this.startTime) / 1000;
+
+
+// La velocidad sigue aumentando
+this.obstacleSpeed = Math.min(
+    this.maxObstacleSpeed,
+    300 + survivalTime * this.speedIncreaseRate
+);
+
+
+// El spawn se acerca solo hasta un límite
+const spawnProgress = Math.min(
+    survivalTime / 60,
+    1
+);
+
+this.spawnDelay = Phaser.Math.Linear(
+    this.initialSpawnDelay,
+    this.minSpawnDelay,
+    spawnProgress
+);
+}
+
   update(time, delta) {
+
+    // Actualizar dificultad solo si el juego está en marcha
+  if (this.gameStarted && !this.gameOver) {
+     this.updateDifficulty();
+  }
+
     // Actualizar background
     if (this.background) {
       this.background.update(this.speed, delta);
