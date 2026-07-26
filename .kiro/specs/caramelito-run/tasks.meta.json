@@ -123,6 +123,25 @@
         "chatSessionId": "sess_685397ba-3b63-46bf-ab1d-8bd7bc50ab9b",
         "timestamp": 1784962930727
       }
+    ],
+    "10. Colisiones y Game Over": [
+      {
+        "executionId": "420f9347-85c8-4e48-9db8-e6a9a86251f7",
+        "chatSessionId": "sess_e23c2195-b676-4b97-aebb-013085b68388",
+        "timestamp": 1785045450704
+      }
+    ],
+    "11. Sistema de puntuación": [
+      {
+        "executionId": "bea7e4d9-1771-47a2-92d9-fa4ee2e242fc",
+        "chatSessionId": "sess_e224bc3c-5296-4152-90bd-ac48730d0980",
+        "timestamp": 1785046727973
+      },
+      {
+        "executionId": "bea7e4d9-1771-47a2-92d9-fa4ee2e242fc",
+        "chatSessionId": "sess_e224bc3c-5296-4152-90bd-ac48730d0980",
+        "timestamp": 1785047072219
+      }
     ]
   }
 }

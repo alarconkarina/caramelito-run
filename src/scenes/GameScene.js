@@ -16,6 +16,12 @@ class GameScene extends Phaser.Scene {
     // Start screen state
     this.gameStarted = false;
     this.startText = null;
+    // Game state
+    this.score = 0;
+    this.scoreText = null;
+    this.gameOver = false;
+    this.startTime = 0;
+    this.gameDuration = 0;
   }
 
   create() {
@@ -64,10 +70,81 @@ this.physics.add.existing(this.ground, true);
         this.startText.setVisible(false);
         // Iniciar spawner de obstáculos
         this.startSpawner(this.spawnDelay);
-      } else {
-        // Si el juego ya empezó, el jugador salta
+        // Registrar tiempo de inicio para score
+        this.startTime = this.time.now;
+        // Mostrar texto de score
+        this.createScoreText();
+      } else if (!this.gameOver) {
+        // Si el juego ya empezó y no está game over, el jugador salta
         this.player.jump();
       }
+    });
+
+    // Registrar colisión entre jugador y obstáculos
+    this.physics.add.overlap(this.player, this.obstacles, this.onHit, null, this);
+  }
+
+  createScoreText() {
+    const { width } = this.scale;
+    this.scoreText = this.add.text(width - 20, 20, `Score: ${this.score}`, {
+      fontSize: '24px',
+      fill: '#ffffff',
+      fontFamily: 'Courier'
+    })
+    .setOrigin(1, 0)
+    .setDepth(100);
+  }
+
+  onHit(player, obstacle) {
+    if (this.gameOver) return; // Evitar múltiples game overs
+    
+    this.gameOver = true;
+    
+    // Reproducir sonido de game over
+    if (this.sound.get('gameover')) {
+      this.sound.play('gameover');
+    }
+    
+    // Calcular score final (segundos de supervivencia × 10)
+    this.gameDuration = (this.time.now - this.startTime) / 1000;
+    this.score = Math.floor(this.gameDuration * 10);
+    
+    // Detener spawn de obstáculos
+    if (this.spawnEvent) {
+      this.spawnEvent.remove();
+    }
+    
+    // Detener movimiento de obstáculos
+    this.obstacles.getChildren().forEach(obstacle => {
+      if (obstacle.active) {
+        obstacle.setVelocityX(0);
+      }
+    });
+    
+    // Detener fondo
+    if (this.background) {
+      this.speed = 0; // Esto hará que el fondo deje de moverse en el update
+    }
+    
+    // Mostrar mensaje de game over
+    const { width, height } = this.scale;
+    this.add.text(width / 2, height / 2, 'GAME OVER', {
+      fontSize: '48px',
+      fill: '#ff0000',
+      fontFamily: 'Courier'
+    })
+    .setOrigin(0.5)
+    .setDepth(100);
+    
+    // Guardar high score en localStorage
+    const storedHighScore = localStorage.getItem('caramelito_highscore');
+    const currentHighScore = storedHighScore ? parseInt(storedHighScore, 10) : 0;
+    const newHighScore = Math.max(this.score, currentHighScore);
+    localStorage.setItem('caramelito_highscore', newHighScore.toString());
+    
+    // Esperar 2 segundos antes de cambiar escena
+    this.time.delayedCall(2000, () => {
+      this.scene.start('GameOverScene', { score: this.score, highScore: newHighScore });
     });
   }
 
@@ -117,18 +194,31 @@ console.log("Después de agregar al grupo:", obstacle.body.velocity.x);
   }
 
   update(time, delta) {
-
-  
+    // Actualizar background
     if (this.background) {
       this.background.update(this.speed, delta);
     }
+    
+    // Actualizar jugador
     if (this.player) {
       this.player.update();
     }
+    
+    // Actualizar obstáculos
     if (this.obstacles) {
       this.obstacles.getChildren().forEach(obstacle => {
         obstacle.update();
       });
+    }
+    
+    // Actualizar score en tiempo real
+    if (this.gameStarted && !this.gameOver && this.startTime > 0 && this.scoreText) {
+      const currentDuration = (this.time.now - this.startTime) / 1000;
+      const newScore = Math.floor(currentDuration * 10);
+      if (newScore !== this.score) {
+        this.score = newScore;
+        this.scoreText.setText(`Score: ${this.score}`);
+      }
     }
   }
 }
