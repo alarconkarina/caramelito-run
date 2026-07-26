@@ -45,19 +45,23 @@ class Player extends Phaser.Physics.Arcade.Sprite {
       this.play('jump');
       
       // Reproducir sonido de salto
-      if (this.scene.sound.get('jump')) {
         this.scene.sound.play('jump');
-      }
+      
     }
   }
 
   update() {
     // Reproducir animación según estado
     if (this.body.blocked.down) {
+      // En el suelo: animación de carrera
       if (!this.anims.isPlaying || this.anims.currentAnim?.key !== 'run') {
         this.play('run', true);
       }
+    } else {
+      // En el aire: mantener animación de salto
+      if (!this.anims.isPlaying || this.anims.currentAnim?.key !== 'jump') {
+        this.play('jump', true);
+      }
     }
-    // Cuando está en el aire, mantener animación de salto
   }
 }

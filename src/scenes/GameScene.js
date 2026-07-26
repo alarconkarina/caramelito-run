@@ -97,6 +97,7 @@ this.physics.add.existing(this.ground, true);
 
     // Escuchar Space para iniciar el juego
     this.input.keyboard.on('keydown-SPACE', () => {
+      
       if (!this.gameStarted) {
         this.gameStarted = true;
         this.startText.setVisible(false);
@@ -135,9 +136,8 @@ this.physics.add.existing(this.ground, true);
     this.gameOver = true;
     
     // Reproducir sonido de game over
-    if (this.sound.get('gameover')) {
       this.sound.play('gameover');
-    }
+    
     
     // Calcular score final (segundos de supervivencia × 10)
     this.gameDuration = (this.time.now - this.startTime) / 1000;
