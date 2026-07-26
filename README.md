@@ -34,20 +34,15 @@ El objetivo del juego es sobrevivir el mayor tiempo posible. El jugador controla
 
 ## Cómo Ejecutar
 
-simplemente abre el archivo `index.html` en tu navegador. Por ejemplo:
+El juego requiere un servidor HTTP local para cargar los assets correctamente. Abrirlo como archivo directo en el navegador no funciona.
+
+Posicionado en el directorio de la carpeta `caramelito-run` usa `npx` para levantar un servidor estático sin necesidad de instalar nada:
 
 ```bash
-# En Windows
-start index.html
-
-# En macOS
-open index.html
-
-# En Linux
-xdg-open index.html
+npx serve . -p 3000
 ```
 
-O arrastra el archivo `index.html` directamente al navegador.
+Luego abre [http://localhost:3000](http://localhost:3000) en el navegador.
 
 ## Controles
 
