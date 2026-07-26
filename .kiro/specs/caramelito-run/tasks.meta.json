@@ -142,6 +142,42 @@
         "chatSessionId": "sess_e224bc3c-5296-4152-90bd-ac48730d0980",
         "timestamp": 1785047072219
       }
+    ],
+    "12. GameOverScene": [
+      {
+        "executionId": "bfb6aec2-4a30-44da-8ec3-342c4d23d089",
+        "chatSessionId": "sess_ce18c588-359a-4985-928c-00d4c52e0ee4",
+        "timestamp": 1785047263725
+      },
+      {
+        "executionId": "bfb6aec2-4a30-44da-8ec3-342c4d23d089",
+        "chatSessionId": "sess_ce18c588-359a-4985-928c-00d4c52e0ee4",
+        "timestamp": 1785047407697
+      }
+    ],
+    "14. Gestión de memoria y rendimiento": [
+      {
+        "executionId": "2c70ea00-d986-4c7c-b1df-0d1db8054b69",
+        "chatSessionId": "sess_7323e168-ff48-4c31-bbc4-9f76f984e308",
+        "timestamp": 1785048549227
+      },
+      {
+        "executionId": "2c70ea00-d986-4c7c-b1df-0d1db8054b69",
+        "chatSessionId": "sess_7323e168-ff48-4c31-bbc4-9f76f984e308",
+        "timestamp": 1785048732212
+      }
+    ],
+    "15. Pulido visual y pixel art final": [
+      {
+        "executionId": "666c6e65-64cc-48b0-b656-2487b4083e77",
+        "chatSessionId": "sess_85f6748f-f656-42f5-9c21-b06e6b537cc0",
+        "timestamp": 1785048796350
+      },
+      {
+        "executionId": "3f1db4f1-016c-40f9-901c-72eb8776376a",
+        "chatSessionId": "sess_85f6748f-f656-42f5-9c21-b06e6b537cc0",
+        "timestamp": 1785049970439
+      }
     ]
   }
 }

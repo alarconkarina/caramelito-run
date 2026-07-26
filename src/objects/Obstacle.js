@@ -7,21 +7,13 @@ class Obstacle extends Phaser.Physics.Arcade.Sprite {
     scene.add.existing(this);
     scene.physics.add.existing(this);
 
-    // Velocidad negativa para движ izquierda
+    // Velocidad negativa hacia la izquierda
     this.setVelocityX(-300);
     this.setImmovable(true);
     this.body.allowGravity = false;
-
-    console.log(
-  "allowGravity:",
-  this.body.allowGravity,
-  "gravityY:",
-  this.body.gravity.y
-);
   }
 
   update() {
-
     // Destruir cuando salga por el borde izquierdo
     if (this.x < -this.width) {
       this.destroy();
