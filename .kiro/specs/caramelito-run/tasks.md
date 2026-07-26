@@ -70,7 +70,7 @@
   - Leer y guardar high score en `localStorage` con la clave `caramelito_highscore`.
   - _Requirement: REQ-05_
 
-- [ ] 12. GameOverScene
+- [x] 12. GameOverScene
   - Crear `src/scenes/GameOverScene.js`.
   - Mostrar "GAME OVER", puntuación final y récord.
   - Escuchar `Space` para reiniciar → lanzar `GameScene`.
@@ -85,13 +85,13 @@
   - Fallar silenciosamente si los archivos no están disponibles.
   - _Requirement: REQ-06_
 
-- [ ] 14. Gestión de memoria y rendimiento
+- [x] 14. Gestión de memoria y rendimiento
   - Verificar que los obstáculos y cualquier objeto fuera de pantalla se destruyen correctamente en cada frame.
   - Confirmar que no quedan listeners o timers huérfanos al reiniciar la partida (limpiar en `shutdown` o `destroy` de cada escena).
   - Ejecutar una partida prolongada y comprobar que el uso de memoria se mantiene estable.
   - _Requirement: REQ-08_
 
-- [ ] 15. Pulido visual y pixel art final
+- [x] 15. Pulido visual y pixel art final
   - Verificar escalado, animaciones y alineación de los sprites definitivos.
   - Ajustar paleta de colores, tamaños de frame y animaciones.
   - Verificar que la estética es coherente con Super Mario / GBA / Chrome Dino.
