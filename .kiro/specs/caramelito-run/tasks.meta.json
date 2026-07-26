@@ -178,6 +178,30 @@
         "chatSessionId": "sess_85f6748f-f656-42f5-9c21-b06e6b537cc0",
         "timestamp": 1785049970439
       }
+    ],
+    "16. Animaciones": [
+      {
+        "executionId": "d4327fac-7a74-498a-a1dd-6ea11f2eda98",
+        "chatSessionId": "sess_6d9fa6c0-cf42-4cc6-90cd-e19cbabb984f",
+        "timestamp": 1785050855924
+      },
+      {
+        "executionId": "d4327fac-7a74-498a-a1dd-6ea11f2eda98",
+        "chatSessionId": "sess_6d9fa6c0-cf42-4cc6-90cd-e19cbabb984f",
+        "timestamp": 1785051000523
+      }
+    ],
+    "13. Audio": [
+      {
+        "executionId": "47529c43-be19-4550-a6a4-5023693b59ad",
+        "chatSessionId": "sess_e735dcd5-156c-4c81-9077-a34818a457a4",
+        "timestamp": 1785052100147
+      },
+      {
+        "executionId": "47529c43-be19-4550-a6a4-5023693b59ad",
+        "chatSessionId": "sess_e735dcd5-156c-4c81-9077-a34818a457a4",
+        "timestamp": 1785052147933
+      }
     ]
   }
 }
