@@ -36,6 +36,11 @@ class BootScene extends Phaser.Scene {
   }
 
   create() {
+    // Inicializar high score en 0 si no existe
+    if (!localStorage.getItem('caramelito_highscore')) {
+      localStorage.setItem('caramelito_highscore', '0');
+    }
+    
     this.scene.start('GameScene');
   }
 }
