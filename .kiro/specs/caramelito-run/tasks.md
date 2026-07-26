@@ -78,7 +78,7 @@
   - _Requirement: REQ-01, REQ-05, REQ-10_
 
 
-- [ ] 13. Audio
+- [x] 13. Audio
   - Colocar `assets/sounds/jump.wav` y `assets/sounds/gameover.wav`.
   - Cargar ambos archivos en `BootScene`.
   - Reproducir sonido de salto en `Player.jump()` y sonido de game over en `onHit`.
@@ -97,7 +97,7 @@
   - Verificar que la estética es coherente con Super Mario / GBA / Chrome Dino.
   - _Requirement: REQ-04, REQ-09_
 
-- [ ] 16. Animaciones
+- [x] 16. Animaciones
  - Crear animaciones de Caramelito.
  - Registrar animación Run.
  - Registrar animación Jump.
