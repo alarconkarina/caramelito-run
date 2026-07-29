@@ -9,9 +9,9 @@ Caramelito Run es un videojuego 2D del género endless runner desarrollado con P
 ## Capturas
 
 <p align="center">
-  <img src="docs/images/start-screen.png" width="32%">
-  <img src="docs/images/gameplay.png" width="32%">
-  <img src="docs/images/gameover.png" width="32%">
+  <img src="docs/images/start-screen.png" width="30%">
+  <img src="docs/images/gameplay.png" width="30%">
+  <img src="docs/images/gameover.png" width="30%">
 </p>
 
 ## Objetivo y Mecánicas
