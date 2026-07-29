@@ -1,0 +1,207 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1. Scaffold del proyecto y configuración base": [
+      {
+        "executionId": "61c05a63-a7e5-4225-a7ab-f56aecaf3c57",
+        "chatSessionId": "sess_9c295d66-5f3a-4ead-b420-d46ad1ff5000",
+        "timestamp": 1784952769120
+      },
+      {
+        "executionId": "61c05a63-a7e5-4225-a7ab-f56aecaf3c57",
+        "chatSessionId": "sess_9c295d66-5f3a-4ead-b420-d46ad1ff5000",
+        "timestamp": 1784952919434
+      }
+    ],
+    "2. BootScene — precarga de assets": [
+      {
+        "executionId": "7b3814ff-9df9-4bd0-8543-024b60b2e9c4",
+        "chatSessionId": "sess_b33c126a-738e-4d53-ba21-0a242c82d341",
+        "timestamp": 1784953223238
+      },
+      {
+        "executionId": "7b3814ff-9df9-4bd0-8543-024b60b2e9c4",
+        "chatSessionId": "sess_b33c126a-738e-4d53-ba21-0a242c82d341",
+        "timestamp": 1784953270942
+      }
+    ],
+    "3. Assets gráficos": [
+      {
+        "executionId": "af3ded01-225b-464f-ac1f-988b5eb5cae9",
+        "chatSessionId": "sess_b1a35466-95cd-4794-aadf-6ccf0f952d59",
+        "timestamp": 1784953479175
+      },
+      {
+        "executionId": "85921adf-8913-425a-84fb-dcc2fa70abde",
+        "chatSessionId": "sess_4710f9f5-5715-4e72-b5ef-29ad1a5af11d",
+        "timestamp": 1784953900762
+      },
+      {
+        "executionId": "8d6c18f1-388c-4851-8c8a-2f7550af90c8",
+        "chatSessionId": "sess_49023b15-6a63-48d4-9d6a-ef583e38c378",
+        "timestamp": 1784953935417
+      },
+      {
+        "executionId": "c9cfcb48-25fa-407b-840a-0d466f1f6a05",
+        "chatSessionId": "sess_7c409259-625d-41d2-87c3-4918585814c3",
+        "timestamp": 1784954166084
+      },
+      {
+        "executionId": "c9cfcb48-25fa-407b-840a-0d466f1f6a05",
+        "chatSessionId": "sess_7c409259-625d-41d2-87c3-4918585814c3",
+        "timestamp": 1784954203345
+      }
+    ],
+    "4. Background residencial con scroll infinito (Background.js)": [
+      {
+        "executionId": "14db7ef6-9d30-469c-bf8c-3d32242dd165",
+        "chatSessionId": "sess_7a0f24de-791e-40a7-bcda-d61216d4f187",
+        "timestamp": 1784954543480
+      },
+      {
+        "executionId": "dab158cf-747c-4bfe-b89d-264725eec18a",
+        "chatSessionId": "sess_7a0f24de-791e-40a7-bcda-d61216d4f187",
+        "timestamp": 1784955234006
+      }
+    ],
+    "5. Jugador Caramelito (Player.js)": [
+      {
+        "executionId": "5f8b4785-011e-456a-93c2-1ac85fe8875a",
+        "chatSessionId": "sess_84cc6126-cffd-4f52-b577-cb5a25c88870",
+        "timestamp": 1784957817642
+      },
+      {
+        "executionId": "5f8b4785-011e-456a-93c2-1ac85fe8875a",
+        "chatSessionId": "sess_84cc6126-cffd-4f52-b577-cb5a25c88870",
+        "timestamp": 1784957870211
+      }
+    ],
+    "6. Input de salto — solo teclado": [
+      {
+        "executionId": "612f1803-7e15-4610-86e3-dfcb2b0a9f95",
+        "chatSessionId": "sess_59ed2652-c816-4c72-8284-9ede5ac10e61",
+        "timestamp": 1784958017326
+      },
+      {
+        "executionId": "612f1803-7e15-4610-86e3-dfcb2b0a9f95",
+        "chatSessionId": "sess_59ed2652-c816-4c72-8284-9ede5ac10e61",
+        "timestamp": 1784958082344
+      }
+    ],
+    "7. Obstáculos (Obstacle.js y spawn)": [
+      {
+        "executionId": "e91ece10-88b3-45b9-8060-e0ceedd35905",
+        "chatSessionId": "sess_a8856960-e601-4edc-a169-b36c339fbad3",
+        "timestamp": 1784958193690
+      },
+      {
+        "executionId": "e91ece10-88b3-45b9-8060-e0ceedd35905",
+        "chatSessionId": "sess_a8856960-e601-4edc-a169-b36c339fbad3",
+        "timestamp": 1784958272676
+      }
+    ],
+    "8. Dificultad progresiva por distancia": [
+      {
+        "executionId": "83ad6ef6-7252-4bce-806d-1bad6bdc63fc",
+        "chatSessionId": "sess_6dfe9965-1d6e-4eb3-b950-cf4f284c659d",
+        "timestamp": 1784962620271
+      },
+      {
+        "executionId": "83ad6ef6-7252-4bce-806d-1bad6bdc63fc",
+        "chatSessionId": "sess_6dfe9965-1d6e-4eb3-b950-cf4f284c659d",
+        "timestamp": 1784962720268
+      }
+    ],
+    "9. Pantalla de inicio": [
+      {
+        "executionId": "d2f57cd7-ca6b-4073-964f-f399eb02875b",
+        "chatSessionId": "sess_685397ba-3b63-46bf-ab1d-8bd7bc50ab9b",
+        "timestamp": 1784962867087
+      },
+      {
+        "executionId": "d2f57cd7-ca6b-4073-964f-f399eb02875b",
+        "chatSessionId": "sess_685397ba-3b63-46bf-ab1d-8bd7bc50ab9b",
+        "timestamp": 1784962930727
+      }
+    ],
+    "10. Colisiones y Game Over": [
+      {
+        "executionId": "420f9347-85c8-4e48-9db8-e6a9a86251f7",
+        "chatSessionId": "sess_e23c2195-b676-4b97-aebb-013085b68388",
+        "timestamp": 1785045450704
+      }
+    ],
+    "11. Sistema de puntuación": [
+      {
+        "executionId": "bea7e4d9-1771-47a2-92d9-fa4ee2e242fc",
+        "chatSessionId": "sess_e224bc3c-5296-4152-90bd-ac48730d0980",
+        "timestamp": 1785046727973
+      },
+      {
+        "executionId": "bea7e4d9-1771-47a2-92d9-fa4ee2e242fc",
+        "chatSessionId": "sess_e224bc3c-5296-4152-90bd-ac48730d0980",
+        "timestamp": 1785047072219
+      }
+    ],
+    "12. GameOverScene": [
+      {
+        "executionId": "bfb6aec2-4a30-44da-8ec3-342c4d23d089",
+        "chatSessionId": "sess_ce18c588-359a-4985-928c-00d4c52e0ee4",
+        "timestamp": 1785047263725
+      },
+      {
+        "executionId": "bfb6aec2-4a30-44da-8ec3-342c4d23d089",
+        "chatSessionId": "sess_ce18c588-359a-4985-928c-00d4c52e0ee4",
+        "timestamp": 1785047407697
+      }
+    ],
+    "14. Gestión de memoria y rendimiento": [
+      {
+        "executionId": "2c70ea00-d986-4c7c-b1df-0d1db8054b69",
+        "chatSessionId": "sess_7323e168-ff48-4c31-bbc4-9f76f984e308",
+        "timestamp": 1785048549227
+      },
+      {
+        "executionId": "2c70ea00-d986-4c7c-b1df-0d1db8054b69",
+        "chatSessionId": "sess_7323e168-ff48-4c31-bbc4-9f76f984e308",
+        "timestamp": 1785048732212
+      }
+    ],
+    "15. Pulido visual y pixel art final": [
+      {
+        "executionId": "666c6e65-64cc-48b0-b656-2487b4083e77",
+        "chatSessionId": "sess_85f6748f-f656-42f5-9c21-b06e6b537cc0",
+        "timestamp": 1785048796350
+      },
+      {
+        "executionId": "3f1db4f1-016c-40f9-901c-72eb8776376a",
+        "chatSessionId": "sess_85f6748f-f656-42f5-9c21-b06e6b537cc0",
+        "timestamp": 1785049970439
+      }
+    ],
+    "16. Animaciones": [
+      {
+        "executionId": "d4327fac-7a74-498a-a1dd-6ea11f2eda98",
+        "chatSessionId": "sess_6d9fa6c0-cf42-4cc6-90cd-e19cbabb984f",
+        "timestamp": 1785050855924
+      },
+      {
+        "executionId": "d4327fac-7a74-498a-a1dd-6ea11f2eda98",
+        "chatSessionId": "sess_6d9fa6c0-cf42-4cc6-90cd-e19cbabb984f",
+        "timestamp": 1785051000523
+      }
+    ],
+    "13. Audio": [
+      {
+        "executionId": "47529c43-be19-4550-a6a4-5023693b59ad",
+        "chatSessionId": "sess_e735dcd5-156c-4c81-9077-a34818a457a4",
+        "timestamp": 1785052100147
+      },
+      {
+        "executionId": "47529c43-be19-4550-a6a4-5023693b59ad",
+        "chatSessionId": "sess_e735dcd5-156c-4c81-9077-a34818a457a4",
+        "timestamp": 1785052147933
+      }
+    ]
+  }
+}
