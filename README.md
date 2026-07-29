@@ -1,4 +1,3 @@
-"# caramelito-run" 
 # Caramelito Run
 
 Caramelito Run es un videojuego 2D del género endless runner desarrollado con Phaser 3. El jugador controla a Caramelito, quien corre automáticamente a través de un escenario residencial mientras debe esquivar distintos obstáculos saltando en el momento adecuado. La dificultad aumenta progresivamente conforme transcurre la partida.
@@ -79,9 +78,11 @@ caramelito-run/
 │       ├── BootScene.js    # Precarga de assets
 │       ├── GameScene.js    # Lógica principal del juego
 │       └── GameOverScene.js# Pantalla de Game Over
-└── assets/
-    ├── sprites/            # Sprites del juego
-    └── sounds/             # Efectos de sonido
+├── assets/
+│   ├── sprites/            # Sprites del juego
+│   └── sounds/             # Efectos de sonido
+└── docs/
+    └── images/             # Imagenes del README
 ```
 
 ### Scenes
